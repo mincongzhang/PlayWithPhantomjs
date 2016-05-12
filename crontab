@@ -4,8 +4,8 @@
 #How to add crontab?
 ##################################
 
-#crontab -e
-#add "* * * * * /bin/bash /path/to/scripts/crontab_test/test.sh", remember to end with new line
+#Run "crontab -e"
+#add "* * * * * /bin/bash /home/user/mizhang/scripts/crontab_test/test.sh", remember to end with new line
 #save crontab
 
 ##################################
@@ -15,3 +15,4 @@
 
 
 current_date=`date '+%A_%W_%Y_%X'`
+touch "/path/scripts/crontab_test/$current_date.txt"
