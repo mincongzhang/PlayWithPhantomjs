@@ -36,8 +36,8 @@ steps = [
   function() {
     console.log('Populate and submit the login form');
     page.evaluate(function() {
-      document.getElementById("username").value="MZhang384";
-      document.getElementById("password").value="FactSet123";
+      document.getElementById("username").value="XXX";
+      document.getElementById("password").value="XXX";
       document.getElementById("submitLogin").click();
     });
   },
