@@ -34,8 +34,8 @@ steps = [
     function(){
         console.log('Populate and submit the login form');
 		page.evaluate(function(){
-			document.getElementById("username").value="XXX";
-            document.getElementById("password").value="XXX";
+			document.getElementById("username").value="MZhang384";
+            document.getElementById("password").value="FactSet123";
 			document.getElementById("submitLogin").click();
 		});
     },
@@ -52,25 +52,48 @@ steps = [
     },
 	
     function(){
-		console.log("Open History");
-		page.open("https://www.seamless.com/OrderHistory.m?vendorType=1", function(status){
+		console.log("Load Favorites");
+		page.open("https://www.seamless.com/ViewFavorites.m", function(status){
 		    if (status !== 'success') {
 				console.log('Unable to access network');
 			} else {
-				console.log('Visiting History');
+				console.log('Visiting Favorites');
 			}
 		});
     },
 	
 	function(){
-		console.log("printing History");
+		console.log("printing Favorites");
 		var result = page.evaluate(function() {
 			return document.querySelectorAll("html")[0].outerHTML;
 		});
-		var file_name = "seamless_history.html";
+		var file_name = "seamless_fav.html";
         fileSystem.write(file_name,result,'w');
 		console.log("Result write to "+file_name);
+		
+		page.render('fav.png');
     },
+	
+	function(){
+		console.log("click Reorder");
+		page.evaluate(function() {
+			var elems = document.querySelectorAll("h4.PrimaryLink a");
+			for(var i=0; i < elems.length; i++) {
+				console.log(elems[i]);
+			}
+
+			/*
+			var elems = document.getElementsByClassName("PrimaryLink");
+			console.log("Get elems:"+elems.length);
+			for(var i=0; i < elems.length; i++) {
+				console.log(elems[i]);
+				console.log(elems[i].textContent);
+				console.log(elems[i].childNodes[0]); //<a> is a child
+			}
+			*/
+		});
+    },
+	
 ];
 /**********END STEPS THAT FANTOM SHOULD DO***********************/
 
