@@ -1,0 +1,17 @@
+#! /bin/bash
+
+##################################
+#How to add crontab?
+##################################
+
+#crontab -e
+#add "* * * * * /bin/bash /path/to/scripts/crontab_test/test.sh", remember to end with new line
+#save crontab
+
+##################################
+#How to delete crontab emails?
+##################################
+#run "echo 'd *' | mail -N"
+
+
+current_date=`date '+%A_%W_%Y_%X'`
