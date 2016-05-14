@@ -9,7 +9,8 @@ http://code-epicenter.com/how-to-login-amazon-using-phantomjs-working-example/
 Things to mention:  
 1.Forget to order from seamless?  
 2.Tired of placing the same order in seamless everyday?  
-    
+3.add team photo  
+
 3.phantomJs:page automation  
 4.Seamless:figure out how to login,place order,submit order in code level  
 5.Hack:Async:wait until a page is fully loaded  
